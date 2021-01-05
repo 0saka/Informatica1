@@ -1,0 +1,135 @@
+Appunti di informatica.
+
+#1 Definizione e storia
+#2 Informazione analogica e digitale
+#3 Rapresentazione e codifica dell'informazione
+#4 Sistema binario e sistemi di numerazione 
+
+### 1 Definizione e storia 
+ 
+ I primi calcolatori programmabili sono del 1946.
+ Informatica = Inform + atica = Informazione + automazione.
+ Si occupa del trattamento dell'informazione.
+
+ La prima macchina di natura meccanica risale al 1500 (Da Vinci),
+ a cui è seguita la pascalina, 1643.
+ Queste macchine NON erano programmabili.
+
+ Nel 1834 si ha la prima macchina "programmabile" di Charles Babbage.
+ 
+ 1847 George Bool scopre le relazioni tra logica e matematica
+ 1895 Meucci (telefono) e Marconi (radio)
+
+ Nel 1936 Turing teorizza la macchina di Turing.
+
+ Fine anni 50 il primo chip di Texas Instruments.
+ 
+ 1980 IBM produce i primi personal computer (DOS).
+
+ Anni '80 in poi, C/C++, Java, Hard Disk, USB etc...
+
+### 2 Informazione analogica e digitale 
+
+ L'informazione è qualcosa che viene comunicato in qualsiasi forma.
+ Nella Teoria dell' informazione l'informazione viene associata al messaggio,
+ che ha il compito di trasportarla.
+ Un messaggio deve essere interpretato e mittente e destinatario devo concordare
+ uno STANDARD. Un messaggio porta informazioni solo e incrementa le conoscenze.
+
+ L'informazione deve essere rappresentata, la rappresentazione può avvenire
+ in modo analogico o digitale.
+
+ ANALOGICO : 
+	-varia in analogia con la grandezza reale e in teoria non ci sono limiti
+	-assume un numero infinito di valori 
+
+ DIGITALE : 
+	-è una rappresentazione approssimativa
+	-ha valori finiti
+
+ In prima analisi si potrebbe affermare che le rappresentazioni digitali siano più
+ approssimate della analogiche, in realtà è l'opposto perché la precisione di un sistema
+ digitale può essere modificata mentre quella analogica risente dei limiti dell'operatore
+ umano.
+
+ Un'informazione per essere correttamente elaborata deve essere codificata in linguaggio
+ comprensibile al calcolatore. Per questo si introducono i concetti di codifica e codice.
+ 
+ Con CODIFICARE si intende l'insieme di convenzioni e regole da adottare se si vuole trasformare
+ l'informazione in una sua rappresentazione e viceversa, che per altro può essere codificata
+ in modi diversi.
+
+ Un codice è un sistema di simboli che permette la rappresentazione dell'informazione
+ ed è definito da:
+	- i simboli, che sono gli elementi atomici della rappresentazione.
+	
+	- l'alfabeto, l'insieme dei simboli possibili, con cardinalità (n)
+	  si indica il numero di elementi dell'alfabeto
+	
+	- le parole codice, o stringhe di simboli, con (l) si intende la lunghezza di ciascuna parola codice
+	
+	- il linguaggio, ovvero le regole per costruire il codice
+
+ In generale il numero di parole che possiamo formare è uguale a n^l, dove n è il
+ numero di simboli di cui disponiamo e l la lunghezza delle nostre parole codice.
+
+ Ad esempio nel codice morse abbiamo 2 soli simboli (-,.) quindi n=2 ed l arbitrariamente lungo,
+ con parole codice di 4 simboli otteniamo 2^4 = 16 parole codice.
+
+ I calcolatori adottano codifiche di lunghezza fissata.
+
+ I calcolatori usano la codifica binaria (0,1), tali simboli vengono chiamati BIT (binary digit)
+ e rappresentano le unità minime di memorizzazione e rappresentazione.
+ Vengono usati perché i registri di memoria vengono realizzati con FLIP-FLOP, meccanismi che operano
+ in due soli stati possibili.
+
+### 3 Rappresentazione e codifica dell'informazione 
+
+ Il codice binario utilizza 2 simboli quindi abbiamo 2^l configurazioni diverse.
+ Viceversa se si devono rappresentare K informazioni diverse occorrono log2(K) bit per
+ associare ad esse codici diversi.
+ 
+ Se quindi volessimo rappresentare 8 informazioni distinte avremmo bisogno di log2(8) = 3 bit.
+ Per ragioni di costruzione dei moderni calcolatori si usano stringhe con l=8 bit, dette byte.
+ Sequenze più lunghe sono denominate word e sono multipli del byte.
+
+ L'adozione di stringhe a lunghezza fissa comporta una precisione finita 
+
+ Nei sistemi di calcolo con numeri a precisione finita le operazioni possono causare errori
+ se il risultato prodotto eccede l'insieme dei valori rappresentabili.
+ UNDERFLOW se il valore è < del minimo rappresentabile
+ OVERFLOW se è > del massimo rappresentabile
+ Nel terzo caso il valore può non eccedere ma non essere compreso nei valori rappresentabili.
+
+### 4 Sistema binario e sistemi di numerazione 
+
+ In un byte, il bit più a destra (peso 0) è il bit meno significativo o LSB (LEAST SIGNIFICANT BIT)
+ quello più a sinistra (peso 7 in 8 bit) è il più significativo o MSB (MOST SIGNIFICANT BIT)
+ 
+ Con 8 bit si possono gestire valori in [0,255] o [-127,128] 
+
+ I sistemi di numerazione vengono di solito classificati in
+ POSIZIONALI:
+ 	-ogni cifra ha una funzione in base alla sua posizione 	
+ NON POSIZIONALI:
+ 	-ogni cifre esprime una quantità non dipendente dalla sua posizione 
+
+ Nei sistemi posizionali si associa a una cifra c un diverso valore in base alla posizione i
+ dove il peso dipende dalla base b di numerazione.
+
+ Conversione da qualsiasi base b a base 10:
+ 	sommatoria di tutti i c * (b^i)
+ Esempio:
+ 	(101)base 2 = 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 5
+ Alcune proprietà dei numeri si perdono durante la conversione.
+ 
+ Per evitare di trattare con stringhe di bit troppo lunghe si usano i sistemi
+ decimale e ottale, e la loro conversione dal binario è immediata.
+ 
+ Da base 2 a base 8 la conversione avviene raggruppando a tre bit la stringa partendo 
+ dal LSB, viceversa, ogni cifra base 8 viene "esplosa" in base 2 nuovamente.
+ Nella rappresentazione esadecimale invece, le cifre vengono raggruppate a 4 e nuovamente
+ esplose per tornare in base 2.
+
+ 
+ 
