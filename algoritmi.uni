@@ -1,0 +1,107 @@
+Algoritmi e programmi 
+
+#1 Algoritmi e calcolabilità
+#2 Automa
+#3 Macchina di Turing
+#4 La calcolabilità
+
+### 1 Algoritmi e calcolabilità
+
+ L'algoritmo viene introdotto in matematica per indicare una sequenza precisa di 
+ operazioni, il computer diventa quindi uno strumento per verificare le proprie
+ teorie e algoritmi.
+
+ Per i problemi per cui esiste più di una soluzione bisogna studiare quale tra tutte 
+ è la più conveniente (sulla base di costo, tempi, risorse etc...)
+
+ Gli elementi per la risoluzione di un problema sono quindi:
+ 
+ 	- algoritmo, ovvero un insieme di operazioni grazie alle quali è possibile
+	  risolvere il problema assegnato
+ 	- esecutore
+ 	- input
+ 	- output
+
+ La teoria della calcolabilità cerca di comprendere quali funzioni possono essere
+ computate tramite procedimento automatico, lo strumento utilizzato per questa
+ verifica è la macchina di turing
+
+### 2 Automa
+
+ L'automa è uno dei modelli fondamentali dell'informatica, astrae il concetto di macchina
+ che esegue algoritmi.
+ Il modello di automa è applicabile a qualsiasi sistema che si evolve nel tempo per
+ effetto di sollecitazioni esterne.
+ Ogni sistema quando riceve delle sollecitazioni in ingresso, cambia il suo stato ed 
+ emette dei segnali in uscita.
+ Ha sempre uno stato di inizio da cui si evolve e può terminare dopo aver attraversato
+ una serie di stati interni.
+
+ Un automa M può essere definito da una quintupla (Q,I,U,t,w):
+ 	- Q insieme finito degli stati interni.
+ 	- I insieme finito di sollecitazioni in ingresso.
+ 	- U insieme finito di uscite.
+ 	- t funzione di transizione che trasforma il prodotto cartesiano Q x I in
+ 	  Q( t : Q x I -> Q) e quindi determina a partire dallo stato corrente per un
+	  dato ingresso, il nuovo stato di funzionamento.
+ 	- w funzione di uscita che trasforma Q x I in U (w : Q x I -> U) e quindi 
+	  determina per un dato ingresso, l'uscita della macchina.
+
+### 3 Macchina di Turing
+
+ Il modello di Macchina di Turing è un particolare automa per il quale sono definiti
+ l'insieme degli ingressi e delle uscite come insiemi di simboli ed è definito
+ un particolare meccanismo di lettura e scrittura delle informazioni, permette di
+ raggiungere risultati teorici sulla calcolabilità e sulla complessità degli
+ algoritmi.
+
+ E' formato da una testina di scrittura/lettura su un nastro bidimensionale 
+ potenzialmente infinito.
+ Ad ogni istante la macchina si trova in uno stato e legge un simbolo sul nastro, la
+ funzione di transizione fa scrivere un simbolo, spostare la testina e cambiare 
+ lo stato della macchina. 
+
+ Inoltre è formata da un dispositivo di controllo che cambia lo stato della macchina
+ ed esegue un'azione elaborativa del simbolo letto.
+
+ E' definita dalla quintupla (A,S,Fm,Fs,Fd):
+ 	- A insieme dei simboli in ingresso e uscita
+ 	- S l'insieme finito degli stati 
+ 	- Fm funzione macchina definita come A x S -> A
+ 	- Fs funzione di stato A x S -> S
+ 	- Fd funzione di direzione A x S -> D = {dx, sx, nessuna}
+
+ Una macchina di Turing che si arresti e trasformi un nastro in input t in t' rappresenta
+ l'algoritmo  y = f(x) ove x e y sono codificati in t e t'.
+
+ Una macchina di Turing che è capace di leggere da un nastro anche la descrizione
+ dell'algoritmo è una macchina UNIVERSALE
+
+ Tesi di Church e Turing: Non esiste alcun formalismo, per modellare una determinata
+                          computazione meccanica, che sia più potente della macchina
+                          di Turing ed equivalenti.
+
+ Ogni algoritmo può essere codificato in termini di MDT e non è risolubile
+ algoritmicamente se nessuna MDT può risolverlo.
+
+
+### 4 La calcolabilità
+
+ La teoria della calcolabilità cerca di comprendere quali funzioni ammettano un 
+ procedimento automatico, ovvero se esiste una MDT che possa risolverla (le loro
+ classi di funzioni calcolabili cooincidono).
+ 
+ La trattabilità studia la eseguibilità di un algoritmo, esistono per esempio problemi
+ risolvibili ma praticamente intrattabili per i loro tempi di esecuzione.
+
+ Complessità spaziale: quantità di memoria necessaria
+ Complessità temporale: il tempo richiesto
+
+ le misure possono essere dinamiche o statistiche, se tengono conto dei dati di input
+ su cui esso opera, caratteristiche strutturali, o meno.
+
+ Il tempo di esecuzione è espresso dalla funzione f(n) dove n è la dimensione dei
+ dati in input.
+ Un algoritmo ha tempo di esecuzione n^2 se il tempo è pari al quadrato della dimensione   dell'input.
+
+ Calcolando la complessità asintotica 
