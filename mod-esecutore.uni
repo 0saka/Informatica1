@@ -1,0 +1,111 @@
+Il modello esecutore.
+
+#1 Cos'è un computer 
+#2 Il modell Von Neumann
+#3 Memorie
+#4 Cpu e alu
+#5 I microprocessori
+#6 Linguaggio assemblativo
+
+
+### 1 Cos'è un computer
+
+ Un computer è un apparecchio elettronico progettato per eseguire diverse attività
+ elementari in modo programmato.
+
+ I lavori che svolge prendono il nome di algoritmi, e la sua esecuzione da parte
+ di un esecutore si traduce in una successione di azioni svolte nel tempo.
+ Si definisce PROCESSO il lavoro svolto e PROCESSORE il suo esecutore.
+ 
+ La traduzione di un algoritmo in un linguaggio comprensibile da un calcolatore è detto
+ PROGRAMMA.
+ 
+### 2 Il modello Von Neumann
+
+ Il modello Von Neumann è un modello teorico rappresentativo dei tradizionali
+ computer, formato da:
+ 	- cpu, coordina l'esecuzione delle operazioni fondamentali
+ 	- memoria, che contiene il programma e i dati a esso utili
+ 	- dispositivi di I/O
+
+ Questo modello si basa sul concetto di programma memorizzato, ovvero la macchina
+ immagazzina sia i dati su cui deve lavorare che i programmi per il suo 
+ funzionamento.
+
+### 3 Memorie
+ 
+ Le memorie sono insiemi di contenitori fisici chiamati REGISTRI, dalle dimensioni
+ finite, a cui ci si può accedere tramite i loro INDIRIZZI, la loro dimensione si 
+ misura in BIT.
+ 
+ Operazioni sulla memoria:
+
+ 	- load, ovvero si preleva l'informazione dal registro senza distruggerla.
+	- store, si scrive una nuova informazione eliminando quella precedente.
+ 	
+ La cpu indica preventivamente l'indirizzo di memoria interessato, la memoria
+ decodifica tale indirizzo affinché, per uno STORE, ci copi all'interno i dati 
+ nel buffer, per un LOAD invece, inserisca i dati del registro nel buffer.
+
+ Alcuni tipi di memorie :
+ 	- RAM (random access memories)
+ 	- memoria ad accesso sequenziale
+ 	- ROM (reand only memory)
+ 	- volatili
+ 	- permanenti
+
+ Le memorie di massa invece sono memorie ausiliari con elevata capacità di 
+ archiviazione. Le informazioni in esso contenute passano prima nella 
+ memoria centrale e poi elaborate, le informazioni prodotte dalla cpu anch'esse
+ passano prima per la memoria centrale e poi vengono immagazzinate in memorie di massa.
+
+ Per ovviare alla velocità minore delle memorie di massa si usano tecniche per 
+ implementare aree di accumulo dati nella memoria centrale (buffer)
+
+### 4 Cpu e alu
+
+ La cpu è formata da:
+ 	- alu (unità logica aritmetica)
+ 	- cu (unità di controllo)
+ 	- registri interni
+
+ La CU preleva ogni istruzione dalla memoria centrale, prelevare i dati che 
+ servono all'esecuzione ed esegue, se per esempio l'istruzione è di tipo aritmetico
+ si occupa di attivare l'ALU e passare le informazioni.
+ Al termine dell'esecuzione la CU procede alla successiva, l'esecuzione di un istruzione
+ può avvenire solo se quella prima è stata terminata.
+
+ Queste tre fasi vengono chiamate:
+ 	- fetch
+ 	- operand assembly
+ 	- execute
+
+ I registri interni variano in quantità e tipo in base all'architettura.
+ In molte cpu :
+ 	- IR (Instruction register), contiene l'istruzione prelevata dalla memoria.
+ 	- PI (Prossima istruzione), la posizione in memoria della prossima istruzione.
+ 	- ACC (Accumulatore), serve come deposito per l'alu.
+ 	- CC (Condition code), indica le condizioni che si verificano durante 
+ 	  l'elaborazione, tipo risultato nullo, negativo e overflow.
+ 	- MAR (memory address register), contiene l'indirizzo in cui i dati saranno
+ 	  fetchati alla cpu o l'indirizzo in cui i dati verranno inviati.
+
+ Fase di fetch:
+ Per avviare un programma la CU copia il contenuto di PI nel MAR, il dato 
+ viene poi conservato in MDR , il contenuto di MDR viene copiato in IR e PI
+ si  aggiorna automaticamente per la prossima istruzione.
+ 
+ Fase di decode:
+ l'istruzione viene interpretata prelevando altri dati dalla memoria se necessario e
+ infine PI punterà all'istruzione successiva.
+
+ Fase di execute:
+ Se per esempio si deve eseguire una somma, la CU anvia all'ALU il comando
+ per l'esecuzione della somma, la ALU esegue, il risultato sarà conservato in 
+ uno dei registri e la CC aggiornata.
+
+ L'ALU esegue operazioni di aritmetiche, di confronto o bitwise su dati 
+ della memoria centrale o registri interni, l'esito viene segnalato nella CC.
+ Per la virgola mobile viene affiancata dai processori matematici
+
+ Il BUS
